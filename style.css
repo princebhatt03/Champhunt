@@ -12,6 +12,52 @@ body {
   width: 100%;
   height: 100%;
 } */
+#page1 {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  background: url(img/BackgroundIMG.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* opacity: 0.8; */
+}
+#page1 h1,
+h2 {
+  z-index: 5;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: context-menu;
+  top: 20%;
+  color: white;
+}
+#page1 h3,
+h4 {
+  z-index: 5;
+  position: relative;
+  display: flex;
+  cursor: context-menu;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 20%;
+  color: white;
+}
+h1::selection {
+  background-color: skyblue;
+}
+h2::selection {
+  background-color: skyblue;
+}
+h4::selection {
+  background-color: skyblue;
+}
+h6::selection {
+  background-color: skyblue;
+}
 #navbar {
   display: flex;
   width: 100%;
@@ -21,7 +67,29 @@ body {
   justify-content: center;
   background-color: #fff;
   height: 100px;
-  box-shadow: 10px 0 5px black;
+  box-shadow: 10px 0 7px black;
+}
+#btn2 {
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+  background-color: skyblue;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  top: 22%;
+  left: 47%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: -5px 0px;
+  font-weight: bold;
+  transition: all ease 0.6s;
+}
+#btn2:hover {
+  background-color: darkblue;
+  color: white;
 }
 #navbar ul {
   width: 100%;
@@ -64,6 +132,31 @@ body {
   height: 65px;
   padding: 2px 20px;
 }
+#submenu {
+  visibility: hidden;
+  top: 20px;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+}
+li:hover ul#submenu {
+  visibility: visible;
+  opacity: 1;
+  background-color: #fff;
+}
+#submenu li {
+  width: 100%;
+  padding: 15px 0;
+  float: none;
+}
+#submenu a {
+  color: black;
+}
+#submenu a:hover {
+  color: skyblue;
+  transform: translateX(5%);
+}
 #btn {
   width: 80px;
   height: 30px;
@@ -91,23 +184,52 @@ body {
   transition: all ease-in-out 0.3s;
   background-color: #101010;
 }
-@media only screen and (max-width: 600px) {
+.loremText {
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+}
+@media only screen and (max-width: 700px) {
+  #page1 {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    background: url(img/mobileBack3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-size: cover; */
+    /* opacity: 0.8; */
+  }
   #navbar ul {
     position: fixed;
     top: -100%;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
-    border-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     text-align: center;
     z-index: 5;
-    transition: all ease 0.5s;
-    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+    transition: all ease 0.7s;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
   }
   #navbar ul.active {
     display: flex;
     transition: all ease 0.5s;
     top: 0;
+  }
+  .fa-chevron-down {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
   }
   #navbar li {
     margin: 5px 0;
@@ -159,6 +281,84 @@ body {
     background-color: skyblue;
     border: none;
     border-radius: 100px;
+    text-align: center;
+    margin: -5px 0px;
+    font-weight: bold;
+    transition: all ease 0.6s;
+  }
+  #page1 h1 {
+    z-index: 5;
+    font-size: 26px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: context-menu;
+    top: 20%;
+    color: white;
+  }
+  #page1 h2 {
+    z-index: 5;
+    font-size: 22px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: context-menu;
+    top: 20%;
+    color: white;
+  }
+  #page1 h3 {
+    z-index: 5;
+    font-size: 18px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: context-menu;
+    top: 20%;
+    color: white;
+  }
+  #page1 h4 {
+    z-index: 5;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: context-menu;
+    top: 20%;
+    color: white;
+  }
+  .loremText {
+    bottom: 0;
+    right: 0;
+    width: 75%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+  }
+  #btn2 {
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+    background-color: skyblue;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    top: 22%;
+    left: 40%;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin: -5px 0px;
     font-weight: bold;
